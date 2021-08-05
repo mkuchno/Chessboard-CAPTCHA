@@ -20,7 +20,14 @@ function initPage(){
 
     function endTime(){
 
-        times[times.length - 1] = (new Date().getTime() / 1000) - times[times.length - 1];
+        //possibility to click after selecting the field
+        if(document.querySelector("#captcha-window i.fa-map-marker") != null){
+
+            times[times.length - 1] = (new Date().getTime() / 1000) - times[times.length - 1];
+            
+            //protection against re-clicking
+            this.disabled = true;
+        }
     }
 
     //disable the button after running captcha
