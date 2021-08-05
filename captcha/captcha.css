@@ -1,0 +1,531 @@
+
+#captcha-window {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-areas:
+        '. . . .'
+        '. a a .'
+        '. b . .'
+        '. b c .'
+        '. b d .'
+        '. b e .'
+        '. b f .'
+        '. b . .'
+        '. . . .';
+    grid-template-columns: 0px auto auto 0px;
+    grid-template-rows: 15px 1fr 0.15fr auto 2fr auto auto 0.45fr 15px;
+    column-gap: 35px;
+    row-gap: 5px;
+    align-items: center;
+    justify-items: center;
+    user-select: none;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    width: 750px;
+    height: 500px;
+    background-color: white;
+    font-size: 18px;
+    font-family: Georgia;
+    text-align: center;
+}
+
+#captcha-window span {
+
+    grid-area: a;
+    font-size: 24px;
+    font-weight: bold;
+    color: #267326;
+}
+
+#captcha-window p {
+
+    grid-area: c;
+    margin: 0;
+    padding: 0;
+}
+
+#captcha-window #chessboard-window {
+
+    position: relative;
+    grid-area: b;
+    width: 365px;
+    height: 365px;
+}
+
+#captcha-window #chessboard-window #cor-hor {
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-collapse: collapse;
+}
+
+#captcha-window #chessboard-window #cor-hor td {
+
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+}
+
+#captcha-window #chessboard-window #cor-ver {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-collapse: collapse;
+}
+
+#captcha-window #chessboard-window #cor-ver td {
+
+    vertical-align: middle;
+    width: 20px;
+    height: 40px;
+    text-align: center; 
+}
+
+#captcha-window #chessboard {
+    
+    float: right;
+    border-collapse: collapse;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+#captcha-window #chessboard td {
+    
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#captcha-window #chessboard td:hover {
+
+    box-shadow: inset 0px 0px 10px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+#captcha-window #chessboard tr:nth-child(even) > td:nth-child(odd) {
+
+    background-color: #267326;
+}
+
+#captcha-window #chessboard tr:nth-child(odd) > td:nth-child(even) {
+
+    background-color: #267326;
+}
+
+#captcha-window #chessboard tr:nth-child(odd) > td:nth-child(odd) {
+
+    background-color: #ffffe6;
+}
+
+#captcha-window #chessboard tr:nth-child(even) > td:nth-child(even) {
+
+    background-color: #ffffe6;
+}
+
+#captcha-window #chessboard i {
+
+    font-size: 24px;
+}
+
+#captcha-window #captcha-task {
+
+    grid-area: d;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    height: 120px;
+}
+
+#captcha-window button {
+
+    border: none;
+    width: 65%;
+    height: 35px;
+    background-color: #267326;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Georgia;
+    color: #ffffe6;
+}
+
+#captcha-window button:hover {
+
+    box-shadow: inset 0px 0px 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+#captcha-window .inactive-btn {
+
+    background-color: #a6a6a6;
+}
+
+#captcha-window #refresh-btn {
+
+    grid-area: e;
+}
+
+#captcha-window #close-btn {
+
+    grid-area: f;
+}
+
+#captcha-window #captcha-alert {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    width: 45%;
+    height: 35%;
+    background-color: white;
+    text-align: center;
+}
+
+#captcha-window #captcha-alert span {
+
+    border-bottom: 1px solid #a6a6a680;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    width: 100%;
+    color: #267326;
+}
+
+#captcha-window #captcha-alert p {
+
+    margin-top: 4%;
+}
+
+#captcha-window #captcha-alert button {
+
+    margin-top: 6%;
+    width: 50%;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 776px) and (max-height: 525px) {
+
+    #captcha-window {
+
+        top: 0;
+        transform: none;
+        margin-left: -375px;
+        padding: 12.5px 0 12.5px 0;
+    }
+
+    #captcha-window #captcha-alert {
+    
+        width: 337.5px;
+        height: 175px;
+    }
+}
+
+@media only screen and (max-width: 775px) {
+
+    #captcha-window {
+
+        top: 0;
+        left: 0;
+        transform: none;
+        display: grid;
+        grid-template-areas:
+            '. . . . .'
+            '. b . . .'
+            '. b a a .'
+            '. b c c .'
+            '. b d e .'
+            '. b d f .'
+            '. b . . .'
+            '. . . . .';
+        grid-template-columns: 15px auto 1fr 1.5fr 60px;
+        grid-template-rows: 15px auto auto auto auto auto auto 0px;
+        column-gap: 0;
+        row-gap: 15px;
+        width: 100%;
+        height: 410px;
+    }
+
+    #captcha-window > *:not(button) {
+
+        transform: scale(0.85);
+    }
+    
+    #captcha-window button {
+
+        width: 80%;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #captcha-window > button:nth-of-type(1) {
+
+        margin-top: -20px;
+    }
+
+    #captcha-window > button:nth-of-type(2) {
+
+        margin-bottom: -20px;
+    }
+    
+    #captcha-window #captcha-alert {
+        
+        padding-bottom: 20px;
+        height: auto;
+    }
+
+    #captcha-window #captcha-alert button {
+
+        width: 40%;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 775px) and (min-height: 411px) {
+
+    #captcha-window {
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 775px) and (max-height: 435px) {
+
+    #captcha-window {
+
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+
+    #captcha-window button {
+
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+       
+    #captcha-window {
+        
+        top: 0;
+        left: 0;
+        transform: none;
+        grid-template-areas:
+            '. . . .'
+            'a a a a'
+            'c c c c'
+            '. . . .'
+            '. d e .'
+            '. d f .'
+            'b b b b'
+            '. . . .';
+        grid-template-columns: 1fr auto auto 1fr;
+        grid-template-rows: 25px auto auto 0.2fr 0.2fr 0.2fr auto 10px;
+        height: 700px;
+    }
+
+    #captcha-window span {
+
+        transform: scale(0.8);
+    }
+
+    #captcha-window p {
+
+        transform: scale(0.8);
+    }
+    
+    #captcha-window button {
+
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        width: 85%;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    #captcha-window #captcha-alert {
+
+        width: 100%;
+        height: 125px;
+    }
+
+    #captcha-window #captcha-alert span {
+
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #captcha-window #captcha-alert p {
+
+        margin: 10px;
+    }
+
+    #captcha-window #captcha-alert button {
+
+        margin: 10px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 660px) and (min-height: 701px) {
+
+    #captcha-window {
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 660px) and (max-height: 725px) {
+
+    #captcha-window {
+
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+
+    #captcha-window {
+
+        grid-template-rows: 25px auto auto 0.2fr 0.2fr 0.2fr 300px 10px;
+        padding-bottom: 35px;
+        height: 600px;
+    }
+
+    #captcha-window #chessboard-window {
+
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (max-width: 340px) and (min-height: 636px) {
+
+    #captcha-window {
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 340px) and (min-height: 660px) {
+
+    #captcha-window {
+
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (max-width: 280px) {
+
+    #captcha-window {
+
+        grid-template-rows: 25px auto auto 0.2fr 0.2fr 0.2fr 250px 10px;
+        padding-bottom: 50px;
+        height: 500px;
+    }
+
+    #captcha-window span {
+
+        font-size: 18px;
+    }
+
+    #captcha-window p {
+
+        font-size: 14px;
+    }
+
+    #captcha-window button {
+
+        font-size: 12px;
+    }
+
+    #captcha-window #chessboard-window {
+
+        transform: scale(0.6);
+    }
+    
+    #captcha-window #captcha-alert {
+
+        height: 110px;
+    }
+}
+
+@media only screen and (max-width: 280px) and (min-height: 551px) {
+
+    #captcha-window {
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 280px) and (min-height: 575px) {
+
+    #captcha-window {
+        
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (max-width: 235px) {
+
+    #captcha-window {
+
+        grid-template-rows: 17px auto auto auto 0.2fr 0.2fr 200px 10px;
+        row-gap: 8px;
+        padding-bottom: 70px;
+        height: 400px;
+    }
+
+    #captcha-window #captcha-task {
+
+        transform: scale(0.75);
+    }
+
+    #captcha-window #chessboard-window {
+
+        transform: scale(0.5);
+    }
+}
+
+@media only screen and (max-width: 235px) and (min-height: 471px) {
+
+    #captcha-window {
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 235px) and (min-height: 495px) {
+
+    #captcha-window {
+
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (max-width: 205px) {
+
+    #captcha-window {
+
+        padding-bottom: 95px;
+    }
+}
