@@ -330,7 +330,7 @@
             '. d f .'
             'b b b b'
             '. . . .';
-        grid-template-columns: 1fr auto auto 1fr;
+        grid-template-columns: minmax(0,1fr) auto auto minmax(0,1fr);
         grid-template-rows: 25px auto auto 0.2fr 0.2fr 0.2fr auto 10px;
         height: 700px;
     }
