@@ -23,9 +23,9 @@ Chessboard-CAPTCHA is a new original CAPTCHA solution based on chessboard,</br> 
 The user's task is to indicate the field on the chessboard with the given coordinates. The given coordinates are randomly selected and distorted. The chessboard symbols are standard, but each time they are mixed up with each other and assigned to different fields. A single Chessboard-CAPTCHA task allows you to generate a new task twice.
 
 ## Chessboard-CAPTCHA on different devices
-<img src="https://user-images.githubusercontent.com/62030541/140007376-480ae4e9-08b7-4daa-94f4-e94ad8ee3392.png" alt="pad" width="40%" height="40%"><img src="https://user-images.githubusercontent.com/62030541/140007571-aeaebe8b-9820-438c-8667-093234ddfb49.png" alt="phone" width="20%" height="20%">
-<img src="https://user-images.githubusercontent.com/62030541/140007576-4d6aee39-b0df-40f2-afeb-cedf3198e8ef.png" alt="computer1" width="60%" height="60%">
-<img src="https://user-images.githubusercontent.com/62030541/140007578-86fb21b5-4364-45e5-ae8f-e311060c534f.png" alt="computer2" width="60%" height="60%">
+<img src="https://user-images.githubusercontent.com/62030541/140007376-480ae4e9-08b7-4daa-94f4-e94ad8ee3392.png" alt="pad" width="50%" height="50%"><img src="https://user-images.githubusercontent.com/62030541/140007571-aeaebe8b-9820-438c-8667-093234ddfb49.png" alt="phone" width="30%" height="30%">
+<img src="https://user-images.githubusercontent.com/62030541/140007576-4d6aee39-b0df-40f2-afeb-cedf3198e8ef.png" alt="computer1" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/62030541/140007578-86fb21b5-4364-45e5-ae8f-e311060c534f.png" alt="computer2" width="70%" height="70%">
 
 ## How to add Chessboard-CAPTCHA to your website
 1. [Download](https://downgit.github.io/#/home?url=https://github.com/mkuchno/Chessboard-CAPTCHA/tree/main/captcha) the necessary captcha folder with the required files.
