@@ -59,9 +59,9 @@ The user's task is to indicate the field on the chessboard with the given coordi
 
     ```html
     <body> <!-- zero CSS rules -->
-    <div id="page"> <!-- all CSS rules from the <body> tag are here -->
-      <button class="captcha-release">CAPTCHA</button>
-    </div>
+      <div id="page"> <!-- all CSS rules from the <body> tag are here -->
+        <button class="captcha-release">CAPTCHA</button>
+      </div>
     </body>
     ```
 
